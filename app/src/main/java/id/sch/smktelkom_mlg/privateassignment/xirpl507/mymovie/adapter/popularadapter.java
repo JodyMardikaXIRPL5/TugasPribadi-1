@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import id.sch.smktelkom_mlg.privateassignment.xirpl507.mymovie.R;
@@ -41,7 +43,7 @@ public class popularadapter extends RecyclerView.Adapter<popularadapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         source source = list.get(position);
-        holder.tvName.setText(source.title);
+        holder.tvJudul.setText(source.title);
         holder.tvDesc.setText(source.overview);
         //holder.itemView.setBackgroundColor(source.color);
         Glide.with(context)
@@ -62,13 +64,13 @@ public class popularadapter extends RecyclerView.Adapter<popularadapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPoster;
-        TextView tvName;
+        TextView tvJudul;
         TextView tvDesc;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvName = (TextView) itemView.findViewById(R.id.textViewName);
-            tvDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
+            tvJudul = (TextView) itemView.findViewById(R.id.textViewJudul);
+            tvDesc = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
             ivPoster = (ImageView) itemView.findViewById(R.id.imageView);
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
